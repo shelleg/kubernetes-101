@@ -28,7 +28,7 @@ Quick Start Scenario-1
 Scenario #1
 ===========
 
-See [Scenatio-1/README.md](../Scenatio-1/README.md)
+See [Scenatio-1/README.md](../Scenario-1/README.md)
 
 Scenario #2
 ===========
