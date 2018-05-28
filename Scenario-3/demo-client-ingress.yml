@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: ingress-client
+  namespace: default
+spec:
+  rules:
+  - host: app.exmaple.com
+    http:
+      paths:
+      - backend:
+          serviceName: demo-client
+          servicePort: 8081
+        path: /client

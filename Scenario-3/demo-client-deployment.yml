@@ -1,0 +1,52 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "2"
+  creationTimestamp: null
+  generation: 1
+  labels:
+    run: demo-client
+  name: demo-client
+  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/demo-client
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      run: demo-client
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: demo-client
+    spec:
+      containers:
+      - image: shelleg/nodejs-client-demo
+        imagePullPolicy: Always
+        name: demo-client
+        ports:
+        - containerPort: 8081
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        env:
+          - name: PONG_PORT
+            value: "31840"
+      dnsPolicy: ClusterFirst
+      hostAliases:
+      - hostnames:
+        - app.exmaple.com
+        ip: 192.168.99.100
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}
