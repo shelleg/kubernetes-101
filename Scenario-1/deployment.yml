@@ -10,7 +10,9 @@ metadata:
   name: demo-app
   selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/demo-app
 spec:
-  replicas: 1
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
   selector:
     matchLabels:
       run: demo-app
