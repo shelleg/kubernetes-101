@@ -18,3 +18,4 @@ NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
 demo-app     NodePort    10.98.55.147   <none>        8080:31153/TCP   20h
 ```
 ![nodeport service](../static/demo-app-node-port.png)
+

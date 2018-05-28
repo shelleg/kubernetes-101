@@ -2,24 +2,27 @@ kubernetes demo-app
 ===================
 
 The following repo was designed to demonstrate kubernetes functionality.
-
-Quick Start
-===========
-
-1. `minikube start`
-1. Add the result of the following command to your etc/hosts:
-   echo "`minikube ip` demo-app.example.com"
-1. `kubectl deploy ./demo-app/deployment.yaml`
-1. `kubectl deploy ./demo-app/service.yaml`
-1. `minikube addons enable ingress`
-1. `kubectl deploy ./demo-app/ingress.yaml`
-1. Open your browser http://demo-app.example.com
+Starting from `minikube` and scaling into a "full-blown" cluster, follow the `Scenario-#` dirs and their corresponding `README.md` files.
 
 Scenarios:
 ==========
 1. demo-app show native pod load balancing
 2. ping pong client and server external service calling an internal services
 3. ping pong client and server external services which communicate with one another from the external service
+
+
+Quick Start Scenario-1
+======================
+
+1. `minikube start`
+1. Add the result of the following command to your etc/hosts:
+   echo "`minikube ip` demo-app.example.com"
+1. `kubectl deploy ./Scenario-1/deployment.yaml`
+1. `kubectl deploy ./Scenario-1/service.yaml`
+1. `minikube addons enable ingress`
+1. `kubectl deploy ./Scenario-1/ingress.yaml`
+1. Open your browser http://demo-app.example.com
+
 
 
 Scenario #1
@@ -56,3 +59,4 @@ Step By Step
     ```
 1. Deploy a sample application `shelleg/demo-nodejs-http-server` [ I recommend running it once in docker just to see it's result ]
   -
+
