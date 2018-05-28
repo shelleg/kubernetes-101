@@ -6,16 +6,16 @@ metadata:
   creationTimestamp: null
   generation: 1
   labels:
-    run: demo-app
-  name: demo-app
-  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/demo-app
+    run: demo-server
+  name: demo-server
+  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/demo-server
 spec:
   progressDeadlineSeconds: 600
-  replicas: 2
+  replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      run: demo-app
+      run: demo-server
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -25,12 +25,12 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        run: demo-app
+        run: demo-server
     spec:
       containers:
-      - image: shelleg/demo-nodejs-http-server
+      - image: shelleg/nodejs-server-demo
         imagePullPolicy: Always
-        name: demo-app
+        name: demo-server
         ports:
         - containerPort: 8080
           protocol: TCP
