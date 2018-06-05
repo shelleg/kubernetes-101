@@ -2,16 +2,16 @@ var http = require('http');
 const express = require('express')
 const app = express()
 const PING_PORT = process.env.PING_PORT || 8081;
-const PONG_HOST = process.env.PONG_HOST || 'app.exmaple.com';
+const PONG_HOST = process.env.PONG_HOST || 'app.example.com';
 const PONG_PORT = process.env.PONG_PORT || 8080;
 
 // API Endpoints
 app.get('/', function (req, res) {
-  res.send('Hello World!')
+  res.send('Hello World!\n')
 })
 
 app.get('/isAlive', function (req, res) {
-  res.send('It\'s aaaalive!')
+  res.send('It\'s aaaalive!\n')
 })
 
 // Metrics endpoint
@@ -33,7 +33,7 @@ app.get('/ping', (req, res) => {
 });
 
 process.on('SIGINT', function() {
-    console.log("Caught interrupt signal");
+    console.log("Caught interrupt signal\n");
     process.exit();
 });
 

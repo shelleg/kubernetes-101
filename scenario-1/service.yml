@@ -16,6 +16,6 @@ spec:
   selector:
     run: demo-app
   sessionAffinity: None
-  type: LoadBalancer
+  type: NodePort
 status:
   loadBalancer: {}

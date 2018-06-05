@@ -2,8 +2,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-  name: ingress-client
+    nginx.ingress.kubernetes.io/app-root: /server
+  name: ingress-server
   namespace: default
 spec:
   rules:
@@ -11,6 +11,6 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: demo-client
-          servicePort: 8081
-        path: /client
+          serviceName: ping-server
+          servicePort: 8080
+        path: /

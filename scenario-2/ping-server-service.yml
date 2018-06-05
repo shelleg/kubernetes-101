@@ -3,9 +3,9 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    run: demo-server
-  name: demo-server
-  selfLink: /api/v1/namespaces/default/services/demo-server
+    run: ping-server
+  name: ping-server
+  selfLink: /api/v1/namespaces/default/services/ping-server
 spec:
   externalTrafficPolicy: Cluster
   ports:
@@ -13,8 +13,8 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    run: demo-server
+    run: ping-server
   sessionAffinity: None
-  type: LoadBalancer
+  type: NodePort
 status:
   loadBalancer: {}

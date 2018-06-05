@@ -25,18 +25,18 @@ Starting from `minikube` and scaling into a "full-blown" cluster, follow the `Sc
 |   `-- service.yml                 # demo-app service spec
 |-- Scenario-2                      # bind 2 services without ingress
 |   |-- README.md                   # scenario readme [ complete ]
-|   |-- demo-client-deployment.yml  # client deployment spec
-|   |-- demo-client-service.yml     # client service spec
-|   |-- demo-server-deployment.yml  # server deployment spec
-|   `-- demo-server-service.yml     # server service spec
+|   |-- pong-server-deployment.yml  # client deployment spec
+|   |-- pong-server-service.yml     # client service spec
+|   |-- ping-server-deployment.yml  # server deployment spec
+|   `-- ping-server-service.yml     # server service spec
 |-- Scenario-3                      # bind 2 services with ingress [ incomplete ]
 |   |-- README.md                   # scenario readme
-|   |-- demo-client-deployment.yml  # client deployment spec
-|   |-- demo-client-ingress.yml     # client ingress spec
-|   |-- demo-client-service.yml     # client service spec
-|   |-- demo-server-deployment.yml  # server deployment spec
-|   |-- demo-server-ingress.yml     # server ingress spec
-|   `-- demo-server-service.yml     # server service spec
+|   |-- pong-server-deployment.yml  # client deployment spec
+|   |-- pong-server-ingress.yml     # client ingress spec
+|   |-- pong-server-service.yml     # client service spec
+|   |-- ping-server-deployment.yml  # server deployment spec
+|   |-- ping-server-ingress.yml     # server ingress spec
+|   `-- ping-server-service.yml     # server service spec
 |-- app                             # demo-apps dir
 |   |-- client                      # client
 |   |   |-- Dockerfile              # client Dockerfile

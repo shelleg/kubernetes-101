@@ -3,9 +3,9 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    run: demo-client
-  name: demo-client
-  selfLink: /api/v1/namespaces/default/services/demo-client
+    run: pong-server
+  name: pong-server
+  selfLink: /api/v1/namespaces/default/services/pong-server
 spec:
   externalTrafficPolicy: Cluster
   ports:
@@ -14,8 +14,8 @@ spec:
     protocol: TCP
     targetPort: 8081
   selector:
-    run: demo-client
+    run: pong-server
   sessionAffinity: None
-  type: LoadBalancer
+  type: ClusterIP
 status:
   loadBalancer: {}

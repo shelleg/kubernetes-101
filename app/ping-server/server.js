@@ -5,7 +5,7 @@ const PORT = 8080; // Non-standard HTTP port
 
 function handleRequest(request, response) {
   console.log(request.headers);
-  response.end('It Works!! Path Hit: ' + request.url);
+  response.end('It Works!! Path Hit: ' + request.url + '\n');
 }
 
 var server = http.createServer(handleRequest);

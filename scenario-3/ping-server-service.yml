@@ -3,18 +3,18 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    run: demo-client
-  name: demo-client
-  selfLink: /api/v1/namespaces/default/services/demo-client
+    run: ping-server
+  name: ping-server
+  selfLink: /api/v1/namespaces/default/services/ping-server
 spec:
   externalTrafficPolicy: Cluster
   ports:
-  - port: 8081
+  - port: 8080
     protocol: TCP
-    targetPort: 8081
+    targetPort: 8080
   selector:
-    run: demo-client
+    run: ping-server
   sessionAffinity: None
-  type: NodePort
+  type: ClusterIP
 status:
   loadBalancer: {}
