@@ -1,6 +1,6 @@
 var http = require('http');
 
-const PORT = 8080; // Non-standard HTTP port
+const PORT = 8081; // Non-standard HTTP port
 //const PORT 80; // Standard HTTP port
 
 function handleRequest(request, response) {
