@@ -38,6 +38,6 @@ process.on('SIGINT', function() {
 });
 
 // Start app
-app.listen(PING_PORT, function () {
-  console.log(`App listening on port ${PING_PORT}...`)
+app.listen(PONG_PORT, function () {
+  console.log(`App listening on port ${PONG_PORT}...`)
 })
