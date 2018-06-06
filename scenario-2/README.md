@@ -17,19 +17,30 @@ kubectl create -f pingpong-deployment.yml -f pong-server-service.yml -f ping-ser
 3. Created a pong service which points the pong-server to the pingpong pod on port 8081
 
 ### Test-drive ...
-1. In one terminal (split/tmux etc) port-forward to ping-server:
 
-  `kubectl port-forwarded <pon-name> 8080:8080`
-2. In a second terminal port-forward to pong-server:
+1. get the pod name:
+  ```shell
+  POD=$(kubectl get pod -l run=pingpong -o jsonpath="{.items[0].metadata.name}")
+  ```
 
-  `kubectl port-forwarded <pon-name> 8081:8081`
+2. In one terminal (split/tmux etc) port-forward to ping-server:
 
-3. From you a third terminal:
+  ```shell
+  kubectl port-forwarded ${POD} 8080:8080
+  ```
 
-  3.1 check ping-server:
+3. In a second terminal port-forward to pong-server:
+
+  ```shell
+  kubectl port-forwarded ${POD} 8081:8081
+  ```
+
+4. From you a third terminal:
+
+  4.1 check ping-server:
       `wget -qO- localhost:8080` should yield `It Works!! Path Hit: /` - this means our ping server is actualy working ...
 
-  3.2 Check pong-server:
+  4.2 Check pong-server:
 
       `wget -qO- localhost:8081` should yield `Hello World!`
 
