@@ -9,7 +9,7 @@ metadata:
     run: pingpong
     tag: pingpong-demo
   name: pingpong
-  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/pingpong
+  namespace: scenario-2
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
