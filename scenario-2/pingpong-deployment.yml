@@ -33,23 +33,26 @@ spec:
         imagePullPolicy: Always
         name: ping-server
         ports:
-        - containerPort: 8080
-          protocol: TCP
-        resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      - image: shelleg/pong-server:latest
-        imagePullPolicy: Always
-        name: pong-server
-        ports:
         - containerPort: 8081
           protocol: TCP
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
-        # env:
-        #   - name: PONG_HOST
-        #     value: 127.0.0.1
+        env:
+          - name: PING_HOST
+            value: "127.0.0.1"
+      - image: shelleg/pong-server:latest
+        imagePullPolicy: Always
+        name: pong-server
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        env:
+          - name: PING_HOST
+            value: "127.0.0.1"
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler

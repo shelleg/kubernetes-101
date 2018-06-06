@@ -9,9 +9,9 @@ metadata:
 spec:
   externalTrafficPolicy: Cluster
   ports:
-  - port: 8081
+  - port: 8080
     protocol: TCP
-    targetPort: 8081
+    targetPort: 8080
   selector:
     run: pingpong
   sessionAffinity: None
