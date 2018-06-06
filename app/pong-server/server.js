@@ -2,7 +2,7 @@ var http = require('http');
 const express = require('express')
 const app = express()
 const PING_PORT = process.env.PING_PORT || 8081;
-const PONG_HOST = process.env.PONG_HOST || 'app.example.com';
+const PING_HOST = process.env.PING_HOST || 'app.example.com';
 const PONG_PORT = process.env.PONG_PORT || 8080;
 
 // API Endpoints
@@ -17,10 +17,10 @@ app.get('/isAlive', function (req, res) {
 // Metrics endpoint
 app.get('/ping', (req, res) => {
   var options = {
-    host: PONG_HOST,
+    host: PING_HOST,
     method: 'GET',
     path: '/pong',
-    port: PONG_PORT
+    port: PING_PORT
   }
 
   console.log(req.headers);
