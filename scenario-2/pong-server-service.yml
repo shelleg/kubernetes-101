@@ -13,7 +13,7 @@ spec:
     protocol: TCP
     targetPort: 8081
   selector:
-    run: pong-server
+    run: pingpong
   sessionAffinity: None
   type: NodePort
 status:
