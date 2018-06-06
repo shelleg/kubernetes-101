@@ -66,7 +66,7 @@ tcp        0      0 :::8081                 :::*                    LISTEN      
 
 ## Recap
 
-We created a pod with 2 containers (not very common but a good example to prove capabilities and pod behavior) a `Deployment` named "pingpong" holds 2 pods:
+We created a pod with 2 containers (not very common but a good example to prove capabilities and pod behavior) a `Deployment` named "pingpong" holds 2 containers:
 1. pong-server (which answers pong to ping)
 2. ping-server (which sends pings to pong servers)
 
