@@ -1,0 +1,12 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: pong-server-conf
+  namespace: scenario-3
+  labels: 
+    run: ping-server
+data:
+  PING_PORT: "8081"
+  PING_HOST: "ping-server"
+  PONG_PORT: "8080"
+
