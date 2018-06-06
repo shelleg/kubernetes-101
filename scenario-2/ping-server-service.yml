@@ -5,7 +5,7 @@ metadata:
   labels:
     run: ping-server
   name: ping-server
-  selfLink: /api/v1/namespaces/default/services/ping-server
+  namespace: scenario-2
 spec:
   externalTrafficPolicy: Cluster
   ports:
@@ -13,7 +13,7 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    run: ping-server
+    run: pingpong
   sessionAffinity: None
   type: NodePort
 status:
